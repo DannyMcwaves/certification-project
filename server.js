@@ -11,8 +11,10 @@ const uid = new ShortUniqueId();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+//
+
 mongoose.connect(
-  process.env.MONGODB_URL,
+  "mongodb+srv://dannymcwaves:rCxSYqOQtSkFHLJK@cluster0.ojqic.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   { useNewUrlParser: true },
   () => console.log("connected to database")
 );
@@ -114,6 +116,6 @@ app.get("/api/shorturl/:shorturl", function (req, res) {
 //--------------------------------------------------------------------------------
 
 // listen for requests :)
-var listener = app.listen(process.env.PORT, function () {
+var listener = app.listen("8080", function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
