@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //
 
 mongoose.connect(
-  "mongodb+srv://dannymcwaves:rCxSYqOQtSkFHLJK@cluster0.ojqic.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  process.env.MONGODB_ATLAS,
   { useNewUrlParser: true },
   () => console.log("connected to database")
 );
